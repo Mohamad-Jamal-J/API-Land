@@ -1,0 +1,90 @@
+{% extends 'base.html'  %}
+{% load static %}
+{% block stylesheet %}
+    <style>
+        body {
+            padding-top: 70px; /* Add padding for fixed navbar */
+            background-color: #111; /* Dark background similar to Netflix */
+            color: #fff; /* Light text color */
+            font-family: Arial, sans-serif; /* Specify a common sans-serif font */
+        }
+
+        .navbar-nav .nav-link {
+            color: #ddd; /* Light gray text color for navbar links */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #e50914; /* Reddish color on hover for navbar links */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .mb-4 {
+            color: #e50914; /* Netflix red for headings */
+        }
+
+        .contact-info h2 {
+            color: #e50914; /* Netflix red for section title */
+            margin-bottom: 20px;
+        }
+
+        .contact-info a {
+            color: #ddd;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        .contact-info a:hover {
+            color: #e50914;
+            text-decoration: underline;
+        }
+
+        .contact-info i {
+            font-size: 2.5em;
+        }
+    </style>
+{% endblock %}
+{% block title %}Socials{% endblock %}
+{% block content %}
+    <div class="container">
+    <h1 class="mb-4 text-center">Connect with me</h1>
+    <div class="row">
+        <div class="col-md-12 mb-4">
+            <a class="card app-card text-center">
+                <div class="card-body">
+                    <h5 style="padding-top: 3px" class="card-title">Email: mo.jamal.jaradat@gmail.com</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6 mb-4">
+            <a href="https://www.linkedin.com/in/mohamad-j-jaradat-9511522b7/" target="_blank" class="card app-card text-center">
+                <img src="{% static 'images/linkedin.png' %}" class="card-img-top" alt="Linkedin icon">
+                <div class="card-body">
+                    <h5 class="card-title">LinkedIn</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6 mb-4">
+            <a href="https://github.com/Mohamad-Jamal-J/" target="_blank" class="card app-card text-center">
+                <img style="padding-top: 10px" src="{% static 'images/github.png' %}" class="card-img-top" alt="GitHub icon">
+                <div class="card-body">
+                    <h5 class="card-title">GitHub</h5>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-12 mb-4">
+            <a href="https://leetcode.com/u/mohamad_jaradat/" target="_blank" class="card app-card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Extra: LeetCode</h5>
+                </div>
+            </a>
+        </div>
+    </div>
+    </div>
+
+
+{% endblock %}

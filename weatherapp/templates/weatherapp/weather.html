@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block  stylesheet %}
+    <link href="{% static 'styles/jokes_app_styles.css' %}" rel="stylesheet">
+       <style>
+        .weather-icon {
+                font-size: 48px;
+                margin-bottom: 10px;
+        }
+        .row.justify-content-center{
+            margin-top: 20px;
+        }
+        .temperature,
+        .humidity,
+        .wind-speed {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .weather-description {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .additional-info {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .col-xs-4{
+            padding-right: 15px;
+        }
+
+        .col-xs-4:nth-child(1){
+            color: #d35b2c;
+        }
+        .col-xs-4:nth-child(2){
+            color: #1b5a9a;
+        }
+        .col-xs-4:nth-child(3){
+            color: #66bb79;
+        }
+
+         .col-xs-4 i{
+            padding-right: 5px;
+        }
+
+         .weather-description.mt-3{
+            font-weight: bold;
+
+         }
+         .additional-info {
+            font-weight: bold;
+        }
+       </style>
+
+{% endblock %}
+
+{% block  title %}Weather App{% endblock %}
+
+{% block  content %}
+<div class="container">
+    <h1>Weather App</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <label style="margin-bottom: 0;">Search for City Name</label>
+        <div class="input-group">
+            <input type="text" class="form-control mt-2" name="city" placeholder="Example: Jerusalem">
+            <div class="input-group-append mt-1">
+                <button class="btn btn-primary mt-1" type="submit">Get Weather</button>
+            </div>
+        </div>
+    </form>
+
+    {% if error %}
+        <div  class="alert alert-primary" role="alert">
+            {{ error }}
+        </div>
+    {% elif city_name%}
+        <div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card text-center">
+            <div style="margin-bottom: 0; cursor: auto" class="list-group-item list-group-item-action list-group-item-info">
+                <div class="card-body">
+                    <h2>{{ city_name }}, {{ country_code }}</h2>
+                    <div class="row justify-content-center">
+                        <div class="col-xs-4">
+                            <i  class="fas fa-thermometer-half weather-icon"></i>
+                            <span class="temperature">{{ temperature }}°C</span><br>
+                        </div>
+                        <div class="col-xs-4">
+                            <i  class="fas fa-tint weather-icon"></i>
+                            <span class="humidity">{{ humidity }}%</span><br>
+                        </div>
+                        <div class="col-xs-4">
+                            <i  class="fas fa-wind weather-icon"></i>
+                            <span class="wind-speed">{{ wind_speed }} m/s</span><br>
+                        </div>
+                    </div>
+
+                    <p class="weather-description mt-3">{{ description }}</p>
+                    <div class="additional-info">
+                        <p>Feels like: {{ feels_like }}°C, &nbsp; &nbsp; &nbsp; Pressure: {{ pressure }} hPa</p>
+                        <p>Sunrise: {{ sunrise }},  &nbsp; &nbsp; &nbsp; Sunset: {{ sunset }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    {% endif %}
+</div>
+{% endblock %}

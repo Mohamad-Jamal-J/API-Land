@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block  stylesheet %}
+    <link href="{% static 'styles/jokes_app_styles.css' %}" rel="stylesheet">
+    <style>
+        #loading-indicator {
+            display: none;
+            font-size: 24px;
+            margin: 10px;
+        }
+        h1{
+            margin-top: 10%;
+        }
+    </style>
+{% endblock %}
+
+{% block  title %}Random dad joke{% endblock %}
+
+{% block  content %}
+<div style="padding-bottom: 70px" class="container">
+    <h1 class="mb-4 text-center">Random Joke Generator</h1>
+    <div class="mt-4 text-center">
+        <button style="width: 65%; margin-bottom: 10px" onclick="refreshPage()" class="btn btn-primary">Get Another Joke</button>
+        <div id="loading-indicator">Loading</div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card text-center">
+                <div style="margin-bottom: 0; cursor: auto" class="list-group-item list-group-item-action list-group-item-info">
+                    <div class="card-body">
+                        {% if joke %}
+                            <h2>{{ joke }}</h2>
+                        {% elif error %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ error_message }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function refreshPage() {
+        const loadingIndicator = document.getElementById('loading-indicator');
+        let dots = '';
+        loadingIndicator.style.display = 'block';
+
+        interval = setInterval(function() {
+            loadingIndicator.textContent = 'Loading' + dots;
+            dots = (dots.length < 3) ? dots + '.' : '';
+        }, 150);
+
+        setTimeout(function() {
+            clearInterval(interval);
+            location.reload();
+        }, 1000);
+    }
+</script>
+{% endblock %}

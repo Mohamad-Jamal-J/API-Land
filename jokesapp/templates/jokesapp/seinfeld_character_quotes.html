@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link href="{% static 'styles/throne_styles.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}Seinfeld: {{ character }}'s quotes{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Seinfeld: {{ character }}'s quotes</h1>
+    {% if error %}
+        <div class="alert alert-primary" role="alert">
+            {{ error }}
+        </div>
+    {% elif results %}
+        <div class="mt-4" style="margin-bottom: 70px">
+            <ul class="list-group">
+                {% for result in results %}
+                    <strong style="color: #1e5c96; padding-bottom: 5px; padding-top: 10px;">
+                        Season {{ result.season }}, episode {{ result.episode }}
+                    </strong>
+                    <li class="list-group-item list-group-item-action list-group-item-info">{{ result.quote }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+

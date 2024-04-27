@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link href="{% static 'styles/throne_styles.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}G.O.T 3-7-9{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Game of Thrones 3-7-9 Quotes</h1>
+    <h2 style="text-align: center;" >You got {{ choice }}</h2>
+    <div class="mt-6 text-center">
+        <button style="width: 65%; margin: 10px" onclick="refreshPage()" class="btn btn-primary">Try Again</button>
+    </div>
+    <span style="text-align: center;">
+        <a href="#" onclick="showPopup(event)">Still Wondering What Are These Numbers?</a>
+    </span>
+    <div id="popupContent" class="popup">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h2>Game of Thrones Numbers</h2>
+            <strong>Three (3):</strong><br>
+            <ul>
+                <li>“Three heads of the dragon,” and Rhaegar eloping with Lyanna to father a third child he thought he needed.</li>
+                <li>The Targaryen sigil is a three-headed dragon, which may or may not have anything to do with the “three heads of the dragon” prophecy-wise.</li>
+                <li>Dany has three dragons, and Aegon I originally conquered Westeros with three dragons.</li>
+                <li>In legend, it took three attempts by Azor Ahai to forge Lightbringer.</li>
+                <li>The three forks of the Trident, each with its own features and significance.</li>
+                <li>Dany’s House of the Undying vision features a set of prophecies that are introduced in groups of three, e.g. “three fires must you light.”</li>
+                <li>The three primary characters (Jon, Dany and Tyrion) are each the third of three children, and it’s two boys and a girl in all three cases. This may or may not have anything to do with the three heads of the dragon concept.</li>
+            </ul>
+            <strong>Seven (7):</strong><br>
+            <ul>
+                <li>There are Seven Kingdoms (all the more significant because there are seven kingdoms but nine regions).</li>
+                <li>The Faith of the Seven features 7 deities, and 7 features strongly in its practices and rituals (septs, septons, the Seven-Pointed Star, 7 hells, etc.).</li>
+                <li>There are 7 members of the Kingsguard, which goes back to the Faith of the Seven.</li>
+                <li>Aegon V tried and failed to hatch seven dragon eggs at Summerhall.</li>
+                <li>There are seven members of the core Stark family: Ned, Catelyn, Robb, Sansa, Arya, Bran and Rickon.</li>
+                <li>Bloodraven supposedly slew Daemon Blackfyre with seven weirwood arrows.</li>
+                <li>A Trial of the Seven features seven combatants, which also goes back to the Faith.</li>
+                <li>The Valyrian Freehold had 14 volcanoes around it, a multiple of 7. A double 7, if you will.</li>
+                <li>Lomas Longstrider listed seven natural (gods-made) wonders in his travel writing.</li>
+                <li>The major instance of foreshadowing with 7 is the “Rhaegar’s rubies” theory. Basically, when Robert smashed Rhaegar’s chest in with his hammer, the rubies in Rhaegar’s armor were knocked off and went into the river. Some of them have washed up on the Quiet Isle; six, to be precise, and the brothers are “waiting for the seventh.” The method of counting changes here and there, but the gist is that the six rubies that have been found represent members of Rhaegar’s family (rubies representing blood, like “you’re my blood”), and the seventh ruby being awaited represents Jon.</li>
+            </ul>
+            <strong>Nine (9):</strong><br>
+            <ul>
+                <li>Nine Free Cities</li>
+                <li>The Band of Nine in the War of the Ninepenny Kings</li>
+                <li>Aegon IV’s nine major mistresses</li>
+                <li>Nine weirwood trees in the grove where Watch brothers swear their oath</li>
+                <li>Drogo’s manse in Pentos has nine towers.</li>
+                <li>Robb’s crown has nine iron spikes.</li>
+                <li>The whip Dany receives when she “buys” the Unsullied has nine lashes.</li>
+                <li>Lomas Longstrider also listed nine man-made wonders in his travel writing.</li>
+                <li>As I said earlier, there are actually nine regions in Westeros.</li>
+            </ul>
+        <span>
+        <a href="https://www.quora.com/In-Game-of-Thrones-do-numbers-play-a-hidden-meaning-in-terms-of-foreshadowing-prophecies-or-clues-in-what-is-to-happen-in-the-future-books-or-episodes" target="_blank">Check Source</a>
+        </span>
+    </div>
+
+    {% if error %}
+        <div class="alert alert-primary" role="alert">
+            {{ error }}
+        </div>
+    {% elif results %}
+        <div class="mt-4" style="margin-bottom: 70px">
+            <ul class="list-group">
+                {% for result in results %}
+                    <strong style="color: #1e5c96; padding-bottom: 5px; padding-top: 10px;">Quote by: {{ result.character.name }},
+                        {% if result.character.house.name %}
+                            {{ result.character.house.name }}
+                        {% else %}
+                            House: Unknown
+                        {% endif %}</strong>
+                     <li class="list-group-item list-group-item-action list-group-item-info">
+                            {{ result.sentence }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+</div>
+    <script>
+        function showPopup(event) {
+            event.preventDefault();
+            document.getElementById("popupContent").style.display = "block"; // Display the pop-up
+        }
+
+        function refreshPage() {
+            location.reload();
+        }
+
+        function closePopup() {
+            document.getElementById("popupContent").style.display = "none"; // Hide the pop-up
+        }
+    </script>
+
+{% endblock %}
+

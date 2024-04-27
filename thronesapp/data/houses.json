@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "stark",
+    "name": "House Stark of Winterfell"
+  },
+  {
+    "slug": "lannister",
+    "name": "House Lannister of Casterly Rock"
+  },
+  {
+    "slug": "baratheon",
+    "name": "House Baratheon of Dragonstone"
+  },
+  {
+    "slug": "targaryen",
+    "name": "House Targaryen of King's Landing"
+  },
+  {
+    "slug": "greyjoy",
+    "name": "House Greyjoy of Pyke"
+  },
+  {
+    "slug": "tarly",
+    "name": "House Tarly of Horn Hill"
+  },
+  {
+    "slug": "tarth",
+    "name": "House Tarth of Evenfall Hall"
+  },
+  {
+    "slug": "bolton",
+    "name": "House Bolton of the Dreadfort"
+  },
+  {
+    "slug": "baelish",
+    "name": "House Baelish of Harrenhal"
+  },
+  {
+    "slug": "tyrell",
+    "name": "House Tyrell of Highgarden"
+  },
+  {
+    "slug": "mormont",
+    "name": "House Mormont of Bear Island"
+  },
+  {
+    "slug": "martell",
+    "name": "House Martell of Sunspear"
+  }
+]

@@ -1,0 +1,59 @@
+{% extends 'base.html'  %}
+{% load static %}
+{% block  stylesheet %}{% endblock %}
+{% block  title %}Seinfeld qutoes{% endblock %}
+{% block  content %}
+    <div style="margin-bottom: 70px" class="container">
+    <h1 class="mb-4 text-center">Seinfeld Quotes World</h1>
+    <div class="row">
+        <div class="col-md-12 mb-4">
+            <a href="{% url 'seinfeld_character' %}?character=" target="_blank" class="card app-card text-center">
+                <img style="padding-top: 8px" src="{% static 'images/dices.png' %}" class="card-img-top" alt="Random Jokes App">
+                <div class="card-body">
+                    <h5 class="card-title">Random Quote</h5>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <a href="{% url 'seinfeld_character' %}?character=George" target="_blank" class="card app-card text-center">
+                <img style="padding-top: 8px; padding-left: 12px" src="{% static 'images/george.png' %}" class="card-img-top" alt="Search a Joke Page">
+                <div class="card-body">
+                    <h5 class="card-title">George Costanza</h5>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <a href="{% url 'seinfeld_character' %}?character=Jerry" target="_blank" class="card app-card text-center">
+                <img style="padding-top: 8px" src="{% static 'images/jerry.png' %}" class="card-img-top" alt="Search a Joke Page">
+                <div class="card-body">
+                    <h5 class="card-title">Jerry Seinfeld</h5>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <a href="{% url 'seinfeld_character' %}?character=Kramer" target="_blank" class="card app-card text-center">
+                <img style="padding-top: 8px;padding-right: 15px " src="{% static 'images/kramer.png' %}" class="card-img-top" alt="Chandler bing">
+                <div class="card-body">
+                    <h5 class="card-title">Cosmo Kramer</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6 mb-4">
+            <a href="{% url 'seinfeld_character' %}?character=Elaine" target="_blank" class="card app-card text-center">
+                <img  src="{% static 'images/elaine.png' %}" class="card-img-top" alt="seinfeld">
+                <div class="card-body">
+                    <h5 class="card-title">Elaine Benes</h5>
+                </div>
+            </a>
+        </div>
+
+    </div>
+    <p>** Please note that the illustrations used on this website are the creative works of the talented artist Aaron Wilkin.
+        I do not claim any ownership or rights to these illustrations.
+        All rights belong to the respective artist. For more information and to view more of Aaron Wilkin's artwork, please visit <a href="https://www.aaronwilkin.com/" target="_blank">Aaron Wilkin's website</a>.</p>
+
+</div>
+{% endblock %}

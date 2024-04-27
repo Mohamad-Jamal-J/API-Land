@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "jon",
+    "name": "Jon Snow"
+  },
+  {
+    "slug": "sansa",
+    "name": "Sansa Stark"
+  },
+  {
+    "slug": "ned",
+    "name": "Eddard \"Ned\" Stark"
+  },
+  {
+    "slug": "catelyn",
+    "name": "Catelyn Stark"
+  },
+  {
+    "slug": "jaime",
+    "name": "Jaime Lannister"
+  },
+  {
+    "slug": "tyrion",
+    "name": "Tyrion Lannister"
+  },
+  {
+    "slug": "cersei",
+    "name": "Cersei Lannister"
+  },
+  {
+    "slug": "joffrey",
+    "name": "Joffrey Baratheon"
+  },
+  {
+    "slug": "aerys",
+    "name": "Aerys II Targaryen"
+  },
+  {
+    "slug": "aemon",
+    "name": "Aemon Targaryen"
+  },
+  {
+    "slug": "daenerys",
+    "name": "Daenerys Targaryen"
+  },
+  {
+    "slug": "tywin",
+    "name": "Tywin Lannister"
+  },
+  {
+    "slug": "ramsay",
+    "name": "Ramsay Bolton"
+  },
+  {
+    "slug": "arya",
+    "name": "Arya Stark"
+  },
+  {
+    "slug": "robert",
+    "name": "Robert Baratheon"
+  },
+  {
+    "slug": "theon",
+    "name": "Theon Greyjoy"
+  },
+  {
+    "slug": "samwell",
+    "name": "Samwell Tarly"
+  },
+  {
+    "slug": "varys",
+    "name": "Lord Varys"
+  },
+  {
+    "slug": "bran",
+    "name": "Bran Stark"
+  },
+  {
+    "slug": "brienne",
+    "name": "Brienne of Tarth"
+  },
+  {
+    "slug": "baelish",
+    "name": "Petyr Baelish"
+  },
+  {
+    "slug": "tormund",
+    "name": "Tormund"
+  },
+  {
+    "slug": "melisandre",
+    "name": "Melisandre"
+  },
+  {
+    "slug": "olenna",
+    "name": "Olenna Tyrell"
+  },
+  {
+    "slug": "mance",
+    "name": "Mance Rayder"
+  },
+  {
+    "slug": "ygritte",
+    "name": "Ygritte"
+  },
+  {
+    "slug": "jaqen",
+    "name": "Jaqen H'ghar"
+  },
+  {
+    "slug": "daario",
+    "name": "Daario Naharis"
+  },
+  {
+    "slug": "joer",
+    "name": "Joer Mormont"
+  },
+  {
+    "slug": "lyanna",
+    "name": "Lyanna Mormont"
+  },
+  {
+    "slug": "oberyn",
+    "name": "Oberyn Martell"
+  },
+  {
+    "slug": "robb",
+    "name": "Robb Stark"
+  },
+  {
+    "slug": "qyburn",
+    "name": "Qyburn"
+  },
+  {
+    "slug": "hodor",
+    "name": "Hodor"
+  },
+  {
+    "slug": "davos",
+    "name": "Davos Seaworth"
+  }
+]

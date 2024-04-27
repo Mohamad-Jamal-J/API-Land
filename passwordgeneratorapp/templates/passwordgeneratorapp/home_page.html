@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link href="{% static 'styles/password_app_styles.css' %}" rel="stylesheet">
+{% endblock %}
+{% block title %}Password Generator App{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Welcome to Password Generator App</h1>
+    <h4><label for="customPasswordForm">Use our recommended password or customize yours</label></h4>
+    <form action="{% url 'passwordgenerator' %}" method="GET" id="customPasswordForm">
+        <div class="form-group">
+            <label for="length">Password Length:</label>
+            <select class="form-control" id="length" name="length">
+                {% if characters_options %}
+                    {% for i in characters_options %}
+                        <option value="{{ i }}"
+                                {% if length and length == i %} selected {% elif not length and i == 16 %} selected {% endif %} >{{ i }}</option>
+                    {% endfor%}
+                {% endif%}
+            </select>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input"
+                   id="uppercase"  name="uppercase" {% if uppercase %} checked {% endif %}>
+            <label class="form-check-label" for="uppercase">Include Uppercase Letters</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input"
+                   id="digits" name="digits" {% if digits %} checked {% endif %}>
+            <label class="form-check-label" for="digits">Include Digits</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input"
+                   id="symbol" name="symbol" {% if symbol %} checked {% endif %}>
+            <label class="form-check-label" for="symbol">Include Symbols</label>
+        </div>
+        <button type="submit" name="action" value="custom" class="btn mt-3">Generate Custom Password</button>
+        <button type="submit" name="action" value="strong" class="btn btn-secondary mt-3">Generate Strong Password</button>
+        <label id="note-label">** Note our strong password is 16-characters long, regardless of your customized choices from above.</label>
+    </form>
+    {% if error %}
+        <div style="color: #cc0812" class="alert alert-primary" role="alert">
+            {{ error }}
+        </div>
+    {% elif password %}
+    <div class="alert alert-primary" role="alert">
+        <h5 class="alert-heading">The Generated Password Is:</h5>
+        <p class="mb-0">{{ password }}</p>
+    </div>
+    {% endif %}
+</div>
+
+    <script>
+      function refreshPage() {
+        location.reload();
+      }
+    </script>
+{% endblock %}

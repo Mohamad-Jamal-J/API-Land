@@ -1,0 +1,222 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+    {% block stylesheet %}styles{% endblock %}
+    <title>{% block title %}My Site{% endblock %}</title>
+
+    <style>
+
+           body {
+            padding-top: 70px; /* Add padding for fixed navbar */
+            background-color: #111; /* Dark background similar to Netflix */
+            color: #fff; /* Light text color */
+            font-family: Arial, sans-serif; /* Specify a common sans-serif font */
+        }
+
+        .navbar {
+            background-color: #1a1a1a; /* Dark gray background for navbar */
+            border-bottom: 1px solid #333; /* Add a border at the bottom for separation */
+        }
+
+        .navbar-brand {
+            color: #e50914; /* Netflix red for navbar brand */
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ddd; /* Light gray text color for navbar links */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #e50914; /* Reddish color on hover for navbar links */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #e50914; /* Netflix red for headings */
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: rgba(101, 101, 101, 0.76); /* Dark background for form */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        label, input[type="checkbox"] {
+            color: #ddd; /* Light gray text color */
+        }
+
+        input[type="submit"] {
+            background-color: #e50914; /* Netflix red for submit button */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #cc0812; /* Darker red on hover */
+        }
+
+        .mb-4 {
+            color: #e50914; /* Netflix red for headings */
+        }
+        .app-card {
+            text-decoration: none;
+            color: #ddd; /* Light gray text color */
+            transition: transform 0.3s ease-in-out;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Darker box shadow */
+            background-color: #222; /* Dark background for cards */
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px); /* Lift card on hover */
+            text-decoration: none; /* Remove underline on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Stronger box shadow on hover */
+        }
+
+        .app-card:hover .card-title {
+            color: #e50914; /* Netflix red text color on hover */
+            font-size: 1.1em; /* Increase text size slightly on hover */
+        }
+
+        .card-img-top {
+            height: 170px; /* Set card image height */
+            object-fit: contain; /* Maintain aspect ratio and crop if needed */
+            display: block;
+            margin: 0 auto; /* Center align image */
+        }
+
+        .card-title {
+            color: inherit;
+            transition: font-size 0.3s ease; /* Smooth font size transition */
+            font-weight: bold; /* Make text bold */
+        }
+           /* Custom CSS for footer */
+            /* Custom CSS for footer */
+        footer {
+            background-color: #1a1a1a; /* Dark gray background for footer */
+            color: #ddd; /* Light gray text color for footer */
+            padding: 20px 0; /* Vertical padding for footer content */
+            width: 100%; /* Full width footer */
+            position: fixed; /* Fixed position */
+            bottom: 0; /* Stick to the bottom of the viewport */
+        }
+
+        footer a {
+            color: #ddd; /* Light gray text color for footer links */
+            margin-right: 10px; /* Margin between footer links */
+        }
+
+        footer a:hover {
+            color: #e50914; /* Reddish color on hover for footer links */
+        }
+
+         footer a:hover:first-child {
+            color: #0077B5; /* Reddish color on hover for footer links */
+        }
+        footer a:hover:nth-child(2) {
+            color: #313a3f; /* Reddish color on hover for footer links */
+        }
+        footer p {
+            margin-bottom: 0; /* Remove bottom margin for footer paragraphs */
+        }
+/* Custom scrollbar styles for dark mode */
+body {
+    {#scrollbar-width: none; /* Hide scrollbar in Firefox */#}
+    -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+}
+
+/* Hide scrollbar in Chrome, Safari, and Opera */
+body::-webkit-scrollbar {
+    width: 12px; /* Set scrollbar width */
+}
+
+/* Scrollbar track */
+body::-webkit-scrollbar-track {
+    background-color: #333;
+}
+
+/* Scrollbar thumb */
+body::-webkit-scrollbar-thumb {
+    background-color: #666; /* Dark color for scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for scrollbar thumb */
+}
+
+/* Scrollbar thumb on hover */
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #999; /* Lighter color on hover for scrollbar thumb */
+}
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <div style="padding-top: 0" class="container">
+        <a class="navbar-brand" href="{% url 'home_page' %}">API Land</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home_page' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about_me' %}" target="_blank">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact_us' %}">Socials</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-left">
+                <p>&copy; 2024 Mohamad Jaradat. All rights reserved. 💻</p>
+            </div>
+            <div class="col-md-6 text-right">
+                <p>Connect with me:
+                    <a href="https://linkedin.com/in/mohamad-j-jaradat-9511522b7" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="https://github.com/Mohamad-Jamal-J" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="mailto:mo.jamal.jaradat@gmail.com"><i class="fas fa-envelope fa-lg"></i></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>

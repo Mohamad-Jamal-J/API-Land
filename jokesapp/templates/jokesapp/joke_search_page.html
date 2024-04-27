@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link href="{% static 'styles/jokes_app_styles.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}Dad joke search{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Search for Dad Jokes</h1>
+
+    <form action="{% url 'search_for_jokes' %}" method="post">
+        {% csrf_token %}
+        <label style="margin-bottom: 0;">Search For a Term</label>
+        <div class="input-group">
+            <input type="text" class="form-control mt-2" name="term" placeholder="Example: Dad joke">
+            <div class="input-group-append mt-1">
+                <button class="btn btn-primary mt-1" type="submit">Search Jokes</button>
+            </div>
+        </div>
+    </form>
+
+    {% if error %}
+    <div class="alert alert-primary" role="alert">
+        {{ error }}
+    </div>
+    {% elif results %}
+
+
+        <div class="mt-4">
+          <div class="mt-4 d-flex justify-content-between">
+            <h4>Search Results For '{{ search_term }}' ({{ total_jokes }})</h4>
+            <h4>Page ({{ current_page }} / {{ total_pages }})</h4>
+          </div>
+          <ul class="list-group">
+            {% for result in results %}
+            <li class="list-group-item list-group-item-action list-group-item-info" data-toggle="modal" data-target="#resultModal{{ result.id }}">
+              {{ result.joke }}
+            </li>
+
+            <div style="margin-top: 10%" class="modal fade" id="resultModal{{ result.id }}" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div  style="background-color: #1b1e21"  class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="resultModalLabel">Joke Details</h5>
+                    <button  style="border-radius:20px;color: #d2cece" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span  aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                      <p>Joke ID: {{ result.id }}</p>
+                      <p>{{ result.joke }}</p>
+                  </div>
+                  <div style="margin: 0; padding:0" class="modal-footer">
+                    <button style="margin: 10px" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </ul>
+        </div>
+        <div style="margin-bottom: 40px" class="mt-4 d-flex justify-content-between">
+            {% if current_page > previous_page %}
+            <a href="?term={{ search_term }}&page={{ previous_page }}" class="btn btn-secondary">Previous Page</a>
+            {% endif %}
+            {% if next_page > current_page %}
+            <a href="?term={{ search_term }}&page={{ next_page }}" class="btn btn-secondary">Next Page</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}

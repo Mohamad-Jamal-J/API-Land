@@ -1,0 +1,45 @@
+{% extends 'base.html'  %}
+{% load static %}
+{% block  stylesheet %}{% endblock %}
+{% block  title %}API Land{% endblock %}
+{% block  content %}
+    <div class="container">
+    <h1 class="mb-4 text-center">Welcome to API Land</h1>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <a href="{% url 'redirect_to_app' %}?app=password-generator" class="card app-card text-center">
+                <img style="padding-top: 25px" src="{% static 'images/password-logo.png' %}" class="card-img-top" alt="Password Generator App">
+                <div class="card-body">
+                    <h5 class="card-title">Password Generator App</h5>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <a href="{% url 'redirect_to_app' %}?app=weather" class="card app-card text-center">
+                <img  style="padding-top: 12px;" src="{% static 'images/weather.png' %}" class="card-img-top" alt="Weather App">
+                <div class="card-body">
+                    <h5 class="card-title">Weather App</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6 mb-4">
+            <a href="{% url 'redirect_to_app' %}?app=jokes" class="card app-card text-center">
+                <img style="padding-top: 15px" src="{% static 'images/clown.png' %}" class="card-img-top" alt="Jokes App">
+                <div class="card-body">
+                    <h5 class="card-title">Entertainment App</h5>
+                </div>
+            </a>
+        </div>
+           <div class="col-md-6 mb-4">
+            <a href="{% url 'redirect_to_app' %}?app=thrones" class="card app-card text-center">
+                <img src="{% static 'images/thrones.png' %}" class="card-img-top" alt="Quotes App">
+                <div class="card-body">
+                    <h5 class="card-title">Game of Thrones App</h5>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    </div>
+{% endblock %}

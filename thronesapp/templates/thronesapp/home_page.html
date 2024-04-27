@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block  stylesheet %}{% endblock %}
+{% block  title %}G.O.T quotes app{% endblock %}
+{% block  content %}
+    <div class="container">
+    <h1 class="mb-4 text-center">Game Of Thrones Quotes</h1>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <a href="{% url 'redirect_to_thrones_page' %}?page=random" target="_blank" class="card app-card text-center">
+                <img style="padding-top: 8px" src="{% static 'images/dices.png' %}" class="card-img-top" alt="Random Quote App">
+                <div class="card-body">
+                    <h5 class="card-title">Random Quote</h5>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <a href="{% url 'redirect_to_thrones_page' %}?page=characters-quotes" target="_blank" class="card app-card text-center">
+                <img src="{% static 'images/character.png' %}" class="card-img-top" alt="Characters quotes">
+                <div class="card-body">
+                    <h5 class="card-title">Search By Characters</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6 mb-4">
+            <a href="{% url 'redirect_to_thrones_page' %}?page=houses-information" target="_blank" class="card app-card text-center">
+                <img src="{% static 'images/house.png' %}" class="card-img-top" alt="House quotes">
+                <div class="card-body">
+                    <h5 class="card-title">Search By House</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6 mb-4">
+            <a href="{% url 'redirect_to_thrones_page' %}?page=all-quotes" target="_blank" class="card app-card text-center">
+                <img src="{% static 'images/mystery.png' %}" class="card-img-top" alt="all quotes">
+                <div class="card-body">
+                    <h5 class="card-title">3-7-9</h5>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+       body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .sidebar {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px;
+            height: 100%;
+            width: 15%;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+        .sidebar h3 {
+            color: #fff;
+        }
+        nav a:hover{
+           color: #fff;
+           text-decoration: none;
+           font-size: 1.01em; /* Increase text size slightly on hover */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin-bottom: 10px;
+        }
+       nav ul li:hover {
+            background-color: rgba(59, 62, 68, 0.61);
+        }
+        main {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3%;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #343a40;
+            color: #ffffff;
+        }
+        footer a {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mohamad Jaradat's Web Page</h1>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-sm-4 sidebar">
+                <nav>
+                    <h3>Content</h3>
+                    <ul>
+                        <li><a href="#bio">Biography</a></li>
+                        <li><a href="#edu">Education</a></li>
+                        <li><a href="#proficiency">Key Proficiencies</a></li>
+                        <li><a href="#volunteer">Volunteer Experience</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-sm-8">
+                <main>
+                    <article>
+                        <i class="fas fa-user-circle fa-5x avatar-icon"></i>
+                        <h2>Welcome to My CV</h2>
+                        <section id="bio">
+                            <h3>Brief Biography</h3>
+                            <p>
+                                I am a fresh graduate from <a href="https://www.birzeit.edu/en" target="_blank">Birzeit University</a>. Throughout my academic journey, I've acquired a diverse
+                                set of technical skills, particularly in programming and problem-solving. I am passionate about exploring
+                                new technologies and expanding my technical knowledge.
+                            </p>
+                        </section>
+                        <section id="edu">
+                            <h3>Education</h3>
+                            <ul>
+                                <li>General secondary examination – Tawjihi scientific stream, score <strong>91.4%</strong> (2018-2019).</li>
+                                <li>B.S in Mathematics/ minor Computer Science at Birzeit university, Evaluation: <strong>Distinction</strong> (2020-2024).</li>
+                                <li>English for freelancers course (British council, 2023).</li>
+                            </ul>
+                        </section>
+                        <section id="proficiency">
+                            <h3>Key Proficiencies</h3>
+                            <ul>
+                                <li><strong>Data Structures</strong>
+                                    <ul>
+                                        <li>Lists: Linked lists and arraylists.</li>
+                                        <li>Stacks, queues, and priority queues.</li>
+                                        <li>Trees, graphs, hash tables, and maps.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Databases</strong>
+                                    <ul>
+                                        <li>Relational model, normalization.</li>
+                                        <li>Relational algebra, SQL, and MySQL DBMS.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Software Engineering</strong>
+                                    <ul>
+                                        <li>Agile software process and SCRUM Framework.</li>
+                                        <li>Requirements engineering: Specifications, elicitation, and validation techniques.</li>
+                                        <li>Architectural patterns: MVC, Client/Server (Thin & Fat), and layered pattern.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Android Mobile Applications (Java)</strong>
+                                    <ul>
+                                        <li>Local storage: Shared preferences.</li>
+                                        <li>Intents, activities, and activity lifecycle.</li>
+                                        <li>Layout managers and views.</li>
+                                        <li>Data exchange using JSON format with Gson library.</li>
+                                        <li>APIs integration using Volley library.</li>
+                                        <li>Implementing APIs with Python Flask.</li>
+                                        <li>Working with Firebase for real-time data updates.</li>
+                                    </ul>
+                                </li>
+                                <li>Testing APIs using Postman software.</li>
+                                <li>Implementing web applications with PHP & HTML.</li>
+                            </ul>
+                        </section>
+                        <section id="volunteer">
+                            <h3>Volunteer Experience</h3>
+                            <p>I have volunteered at the following places:</p>
+                            <ul>
+                                <li>Contributed to the Christmas tree lighting event organization, <a href="https://www.ramallah.ps/" target="_blank">Ramallah Municipality</a>  (2022).</li>
+                                <li>90-hours of checking books in and out of a library system, Birzeit University's library (2023).</li>
+                            </ul>
+                        </section>
+                        <section id="skills">
+                            <h3>Skills</h3>
+                            <ul>
+                                <li><strong>Intermediate English level (B2 Cambridge).</strong></li>
+                                <li><strong>Communication skills:</strong> Able to convey ideas and information through verbal & written channels.</li>
+                                <li><strong>Google Suite:</strong> Proficient in utilizing various tools within Google Suite for productivity and collaboration, including Google Drive, Docs, Sheets, and Slides.</li>
+                                <li><strong>Attention to detail:</strong> Carefully checking tasks and requirements for accuracy and precision.</li>
+                                <li><strong>Presentation skills:</strong>
+                                    <ul>
+                                        <li>Proficient in delivering clear & engaging presentations to diverse audiences.</li>
+                                        <li>Led a mental health workshop for university students, Birzeit University (2022).</li>
+                                        <li>Delivered an exceptional presentation in social psychology, Birzeit University (2023).</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </section>
+                           <section id="projects">
+                            <h3>Projects</h3>
+                            <ul>
+                                <li><a href="https://github.com/Mohamad-Jamal-J/TASK-UP-APPLICATION" target="_blank">Task manager application, Android</a></li>
+                                <li><a href="https://github.com/Mohamad-Jamal-J/EntertainmentApp" target="_blank">Entertainment application, Android</a></li>
+                            </ul>
+                        </section>
+                    </article>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-left">
+                    <p>&copy; 2024 Mohamad Jaradat. All rights reserved. 💻</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p>Connect with me:
+                    <a href="https://linkedin.com/in/mohamad-j-jaradat-9511522b7" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="https://github.com/Mohamad-Jamal-J" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="mailto:mo.jamal.jaradat@gmail.com"><i class="fas fa-envelope fa-lg"></i></a>
+                    </p>
+                </div>
+            </div>
+    </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
