@@ -24,4 +24,4 @@ Embark on a journey through the seven kingdoms of Westeros with a curated collec
 [![Entertainment App Demo](https://drive.google.com/uc?export=view&id=1SpP5ozMVH-x3ZVvKea2SH-lpj-kEPZ6U)](https://drive.google.com/file/d/1rglFvrt_OTmH5vKrcBxUbvoaD9hqplIU/preview)
 
 ### Game of Thrones Quotes App
-[![Game of Thrones Quotes App Demo](https://drive.google.com/uc?export=view&id=1aKkD2RldXml085O24xvT9571zaB0dWQE)](https://drive.google.com/file/d/1OOy7L615A9huzUVgTkEL6NKYqO/preview)
+[![Game of Thrones Quotes App Demo](https://drive.google.com/uc?export=view&id=1aKkD2RldXml085O24xvT9571zaB0dWQE)](https://drive.google.com/file/d/1OOy7L615A9huzUVgTkEL6NKYqO-ijKaK/preview)
