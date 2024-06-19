@@ -8,7 +8,7 @@ def home_page(request):
 
     if request.method == 'POST':
         city = request.POST['city']
-        key = "269abd364a97d27623137287c9fe4ef3"
+        key = "YOUR OWN API KEY"
         source = f"https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={key}"
         response = requests.get(source)
 
