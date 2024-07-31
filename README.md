@@ -1,6 +1,6 @@
 # API Land 🌍 (Python Django - Application)
 
-This web application offers a variety of features designed to cater to different interests and needs.
+This web application offers a variety of features designed to meet to different interests and needs.
 
 ## Features
 
